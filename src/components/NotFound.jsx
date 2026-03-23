@@ -29,7 +29,7 @@ export default function NotFound() {
                 </div>
 
                 {/* gold divider */}
-                <div className="w-14 h-[3px] bg-[#c8a96e] mx-auto mb-5 rounded-full" />
+                <div className="w-14 h-0.75 bg-[#c8a96e] mx-auto mb-5 rounded-full" />
 
                 {/* title */}
                 <h1
