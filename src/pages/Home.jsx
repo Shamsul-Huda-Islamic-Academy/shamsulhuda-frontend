@@ -1,3 +1,7 @@
+import Info from "../components/Info";
+
 export default function Home() {
-    return 
+    return (
+        <Info />
+    )
 }

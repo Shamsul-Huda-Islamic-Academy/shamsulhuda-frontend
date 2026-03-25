@@ -13,7 +13,7 @@ import ScrollTop from './components/ScrollTop'
 import NotFound from './components/NotFound'
 
 const Home = lazy(() =>
-  new Promise(resolve => setTimeout(resolve, 3000)) 
+  new Promise(resolve => setTimeout(resolve, 0)) 
     .then(() => import('./pages/Home')))
 const About = lazy(() => import('./pages/About'))
 const Activities = lazy(() => import('./pages/Activities'))
