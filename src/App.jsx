@@ -25,7 +25,6 @@ function App() {
   return(
     <AppProvider>
       <BrowserRouter>
-
           <Navbar />
         <ScrollTop />
           
