@@ -50,20 +50,20 @@ export default function Facilities() {
                     <img 
                         src={facility.image} 
                         alt={facility.name}
-                        className="w-full h-full object-cover" 
+                        className="object-cover w-full h-full" 
                     />
                     <div className="absolute inset-0 bg-black/40" />
                 </div>
             ))}
 
-            <div className="absolute top-5 left-6 z-10">
-                    <p className="text-white text-xl tracking-wide font-semibold">
+            <div className="absolute z-10 top-5 left-6">
+                    <p className="text-xl font-semibold tracking-wide text-white">
                         Our <span className="italic font-light">Facilities</span>
                     </p>
             </div>
 
-            <div className="absolute top-5 right-6 z-10">
-                <p className="text-white text-sm font-light tracking-wider">
+            <div className="absolute z-10 top-5 right-6">
+                <p className="text-sm font-light tracking-wider text-white">
                     <span className="text-2xl font-bold">
                         {String( active + 1).padStart(2, '0')}
                     </span>
@@ -73,20 +73,20 @@ export default function Facilities() {
                 </p>
             </div>
 
-             <div className="absolute bottom-24 left-0 right-0 z-10 pointer-events-none">
+             <div className="absolute left-0 right-0 z-10 pointer-events-none bottom-24">
                 <p className="text-white/45 font-black text-6xl md:text-[clamp(5rem,15vw,12rem)] leading-none px-6 select-none">
                 {current.name}
                 </p>
             </div>
         
-            <div className="absolute top-16 left-6 z-10 max-w-xl">
-                <h2 className="text-white text-3xl md:text-4xl md:text-5xl font-bold leading-tight">
+            <div className="absolute z-10 max-w-xl top-16 left-6">
+                <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl md:text-5xl">
                 Exceptional <span className="italic font-light">Facilities</span> Designed to
                 Support Learning, Research and Discovery
                 </h2>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 z-10 flex gap-2 mb-2 md:mb-4 mx-2">
+            <div className="absolute bottom-0 left-0 right-0 z-10 flex gap-2 mx-2 mb-2 md:mb-4">
                 {facilities.map((facility, index) => (
                 <button
                     key={facility.id}
