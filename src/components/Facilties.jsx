@@ -1,4 +1,3 @@
-import { button, div, section } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 const facilities = [
