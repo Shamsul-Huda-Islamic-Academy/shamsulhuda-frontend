@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 export default function Events() {
     const cardRef = useRef([]);
     
-useEffect(() => {
+        useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
