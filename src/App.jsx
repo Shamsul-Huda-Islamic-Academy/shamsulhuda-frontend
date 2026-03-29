@@ -20,6 +20,7 @@ const Activities = lazy(() => import('./pages/Activities'))
 const Events = lazy(() => import('./pages/Events'))
 const Faculties = lazy(() => import('./pages/Faculties'))
 const Management = lazy(() => import('./pages/Management'))
+const Donate = lazy(() => import('./pages/Donate'))
 
 function App() {
   return(
@@ -39,7 +40,8 @@ function App() {
               <Route path={ROUTES.EVENTS} element={<Events />} />
               <Route path={ROUTES.FACULTIES} element={<Faculties />} />
               <Route path={ROUTES.MANAGEMENT} element={<Management />} />
-
+              <Route path={ROUTES.DONATE} element={<Donate />} />
+              
               <Route path='/home' element={<Navigate to="/" replace />} />
 
               <Route path='*' element={<NotFound />} />

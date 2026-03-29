@@ -5,4 +5,5 @@ export const ROUTES = {
     EVENTS: '/events',
     FACULTIES: '/faculties',
     MANAGEMENT: '/management',
+    DONATE: '/donate'
 }

@@ -9,8 +9,8 @@ export default function Navbar() {
     const { openDrawer } = useAppContext();
 
     return (
-        <div className="grid grid-row-2 m-6">
-            <div className="hidden md:grid grid-cols-2  px-16 py-2 text-sm text-gray-600">
+        <div className="grid m-6 grid-row-2">
+            <div className="hidden grid-cols-2 px-16 py-2 text-sm text-gray-600 md:grid">
                 <div className="flex items-start gap-8">
                     <span className="flex items-center justify-center gap-2 font-semibold">
                         <Phone size={16} color="#4a9c59" />
@@ -28,13 +28,13 @@ export default function Navbar() {
                     <Instagram size={16} className="text-gray-500 hover:text-[#4a9c59] cursor-pointer" /> */}
                 </div>
             </div>
-            <div className="flex items-center justify-between md:px-16 py-1">
+            <div className="flex items-center justify-between py-1 md:px-16">
                 
                 <div className="w-36">
                     <img src="/src/assets/images/shia-logo-j (1).png" alt="" />
                 </div>
 
-                <div className="hidden lg:flex justify-between gap-6 text-lg font-medium">
+                <div className="justify-between hidden gap-6 text-lg font-medium lg:flex">
                     <Link to={ROUTES.HOME} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Home</Link>
                     <Link to={ROUTES.HOME} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Mission</Link>
                     <Link to={ROUTES.HOME} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Facilities</Link>
@@ -53,11 +53,13 @@ export default function Navbar() {
                 </div>
 
                 <div className="">
+                    <Link to={ROUTES.DONATE}>
                     <button
                         className="hidden lg:block bg-[#4A9C59] px-6 py-2 rounded-lg text-white active:scale-95 hover:bg-green-600" 
                     >
                         Donate
                     </button>
+                    </Link>
                     <button
                         onClick={openDrawer}
                         className="lg:hidden p-2 rounded-md text-gray-600 hover:text-[#4A9C59] hover:bg-gray-100 transition-colors"
