@@ -1,8 +1,9 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Card from './Card'
 
 export default function Showcase({ title, events }) {
+    const cardRef = useRef([]);
     const scrollRef = useRef(null)
     const isDragging = useRef(false)
     const startX = useRef(0)
@@ -32,6 +33,29 @@ export default function Showcase({ title, events }) {
         isDragging.current = false
         if (scrollRef.current) scrollRef.current.style.cursor = 'grab'
     }
+        useEffect(() => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.remove(
+                                "opacity-0",
+                                "translate-y-8",
+                                "scale-95"
+                            );
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.15 }
+            );
+    
+            cardRef.current.forEach((el) => {
+                if (el) observer.observe(el);
+            });
+    
+            return () => observer.disconnect();
+        }, []);
 
     return (
         <section className="px-4 py-12 md:px-10">
@@ -65,7 +89,14 @@ export default function Showcase({ title, events }) {
                 style={{ cursor: 'grab', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 {events.map((event) => (
+                    <div
+                    key={event.id}
+                    ref={(el) => (cardRef.current[event.id] = el)}
+                    className="transition-all duration-700 ease-out scale-95 translate-y-8 opacity-0"
+                    style={{ transitionDelay: `${ event.id * 120}ms`}}
+                    >
                     <Card key={event.id} {...event} />
+                    </div>
                 ))}
             </div>
 
