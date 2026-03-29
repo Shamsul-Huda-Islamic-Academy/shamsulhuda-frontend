@@ -30,6 +30,7 @@ function App() {
           
           <Drawer />
 
+        <main className='min-h-screen'>
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path={ROUTES.HOME} element={<Home />} />
@@ -44,7 +45,7 @@ function App() {
               <Route path='*' element={<NotFound />} />
             </Routes>
           </Suspense>
-
+        </main>
           <Footer />
 
 
