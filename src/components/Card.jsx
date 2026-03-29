@@ -1,6 +1,6 @@
 export default function Card({ title, date, description, category, image }) {
     return (
-        <div className="flex-shrink-0 w-[380px] h-[520px] bg-[#f5f5f7] rounded-3xl overflow-hidden cursor-pointer hover:scale-[1.015] transition-transform duration-300 flex flex-col">
+        <div className="flex-shrink-0 w-full h-[520px] bg-[#f5f5f7] rounded-3xl overflow-hidden cursor-pointer hover:scale-[1.015] transition-transform duration-300 flex flex-col">
 
             <div className="h-[200px] px-7 pt-7 pb-4 flex flex-col gap-1 flex-shrink-0">
 

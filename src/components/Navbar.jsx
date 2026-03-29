@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import { useAppContext } from "../context/AppContext"
 import { ROUTES } from "../constants/routes";
 
-// import { Facebook, Youtube, Instagram } from "lucide-react"
-
 export default function Navbar() {
     const { openDrawer } = useAppContext();
 
