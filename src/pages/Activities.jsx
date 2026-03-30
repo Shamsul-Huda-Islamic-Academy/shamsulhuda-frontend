@@ -1,6 +1,7 @@
 import Card from "../components/Card";
 import { eventsData } from "../constants/eventData";
 import { useEffect, useRef } from "react";
+import { CalendarX } from "lucide-react";
 
 export default function Activities() {
     const cardRef = useRef([]);
@@ -35,7 +36,20 @@ export default function Activities() {
                 </h1>
             </div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {eventsData.map((event, i) => (
+                {eventsData.length === 0 ? (
+                <div className="flex flex-col items-center justify-center col-span-3 py-24 text-center">
+                    <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-green-50">
+                        <CalendarX size={28} className="text-[#4A9C59]" />
+                    </div>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-800">
+                        No Activities Uploaded
+                    </h3>
+                    <p className="text-sm text-gray-400">
+                        Check back soon — new activities will appear here.
+                    </p>
+                </div>
+                ) : (
+                eventsData.map((event, i) => (
                     <div
                     key={event.id}
                     className="transition-all duration-700 ease-out scale-95 translate-y-8 opacity-0"
@@ -48,7 +62,8 @@ export default function Activities() {
                             {...event}  
                         />
                     </div>
-                ))} 
+                )) 
+                )}
             </div>
         </section>
     )
