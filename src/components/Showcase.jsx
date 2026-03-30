@@ -95,10 +95,11 @@ export default function Showcase({ title, events }) {
                     className="transition-all duration-700 ease-out scale-95 translate-y-8 opacity-0"
                     style={{ transitionDelay: `${ event.id * 120}ms`}}
                     >
+                        
                     <Card key={event.id} {...event} />
                     </div>
                 ))}
-            </div>
+                </div>
 
             <style>{`div::-webkit-scrollbar { display: none; }`}</style>
         </section>

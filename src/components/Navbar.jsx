@@ -2,9 +2,34 @@ import { Phone, Mail, Menu } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useAppContext } from "../context/AppContext"
 import { ROUTES } from "../constants/routes";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
     const { openDrawer } = useAppContext();
+    const navigate = useNavigate();
+    const location = useLocation();
+    
+    const scrollToMission = () => {
+        if (location.pathname === '/') {
+            document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' })
+        } else {
+            navigate('/')
+            setTimeout(() => {
+                document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' })
+            }, 300)
+        }
+    }
+    
+    const scrollToFacilities = () => {
+        if (location.pathname === '/') {
+            document.getElementById('facilities')?.scrollIntoView({ behavior: 'smooth' })
+        } else {
+            navigate('/')
+            setTimeout(() => {
+                document.getElementById('facilities')?.scrollIntoView({ behavior: 'smooth' })
+            }, 300)
+        }
+    }
 
     return (
         <div className="grid m-6 grid-row-2">
@@ -34,8 +59,8 @@ export default function Navbar() {
 
                 <div className="justify-between hidden gap-6 text-lg font-medium lg:flex">
                     <Link to={ROUTES.HOME} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Home</Link>
-                    <Link to={ROUTES.HOME} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Mission</Link>
-                    <Link to={ROUTES.HOME} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Facilities</Link>
+                    <Link onClick={scrollToMission} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Mission</Link>
+                    <Link onClick={scrollToFacilities} className="text-gray-600 hover:text-[#4A9C59] transition-colors">Facilities</Link>
                     <div className="relative group">
                         <span className="cursor-pointer text-gray-600 hover:text-[#4A9C59]">
                             Activities

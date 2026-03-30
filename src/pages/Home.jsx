@@ -10,9 +10,13 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <Info />
+            <div id='mission'>
+                <Info />
+            </div>
             <Message />
-            <Facilities />
+            <div id='facilities'>
+                <Facilities />
+            </div>
             <Showcase 
                 title="Upcoming Events"
                 events={eventsData.slice(0, 6)}
