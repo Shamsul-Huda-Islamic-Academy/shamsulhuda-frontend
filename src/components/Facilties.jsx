@@ -19,7 +19,7 @@ const facilities = [
   {
     id: 4,
     name: 'Mosque',
-    image: 'https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=1400&q=80',
+    image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1400&q=80',
   },
   {
     id: 5,
